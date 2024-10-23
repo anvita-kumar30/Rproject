@@ -31,3 +31,5 @@ df$milk
 # Subset milk sales greater than 20
 milk[milk > 20]
 
+# Extract the first 3 elements of the 'cola_cans' vector
+cola_cans[1:3]
