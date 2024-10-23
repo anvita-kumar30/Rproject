@@ -23,7 +23,6 @@ count_trailing_zeros <- function(x) {
 flajolet_martin <- function() {
   input_stream <- c(10, 14, 15, 12, 15, 10, 15, 14, 10, 15)
   max_trailing_zeros <- -1  # Start with -1 to ensure any trailing zero count is larger
-  R <- NULL  # To keep track of the number that gives max trailing zeros
   
   for (num in input_stream) {
     result <- count_trailing_zeros(num)
@@ -35,14 +34,13 @@ flajolet_martin <- function() {
     # Update max trailing zeros and corresponding number R
     if (trailing_zeros > max_trailing_zeros) {
       max_trailing_zeros <- trailing_zeros
-      R <- num  # Store the number that produces the max trailing zeros
     }
   }
   
   # Calculate final result
   final_result <- 2^max_trailing_zeros
-  cat("Number with maximum trailing zeros (R): ", R, "\n")
-  cat("Final Result: 2^", max_trailing_zeros, " = ", final_result, "\n")
+  cat("Maximum trailing zeros (R): ", max_trailing_zeros, "\n")
+  cat("Estimated number of distinct elements (N=2^R): 2^", max_trailing_zeros, " = ", final_result, "\n")
 }
 
 # Run the Flajolet-Martin function
